@@ -1,0 +1,114 @@
+```css
+/* ==========================================================================
+   DUNBARDIGITAL DESIGN SYSTEM & TYPOGRAPHY
+   Theme: Candy Palette (Watermelon, Neon Violet, Light Green, etc.)
+   Typography: Space Grotesk (Headers) + Plus Jakarta Sans (Body)
+   ========================================================================== */
+
+/* 1. FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* 2. CUSTOM VARIABLES (CANDY PALETTE) */
+:root {
+  /* Candy Colors */
+  --light-green: #72F7A0;
+  --watermelon: #ED264D;
+  --baby-blue-ice: #7CB8FF;
+  --royal-gold: #F9DD5C;
+  --neon-violet: #C64DEC;
+  --jet-black: #282C34;
+  --onyx: #131418;
+  --black: #05060A;
+  --alabaster-grey: #DEDFE3;
+  --pale-slate: #C4C8D2;
+
+  /* Default Light Mode Configurations */
+  --bg-primary: #F8F9FA;
+  --text-primary: var(--jet-black);
+  --text-secondary: #4B5563; /* Gray 600 */
+  --border-color: #E5E7EB; /* Gray 200 */
+  --card-bg: #FFFFFF;
+}
+
+/* Dark Mode Overrides (Controlled via .dark class on the <html> tag) */
+.dark {
+  --bg-primary: var(--black);
+  --text-primary: var(--alabaster-grey);
+  --text-secondary: var(--pale-slate);
+  --border-color: var(--onyx);
+  --card-bg: var(--onyx);
+}
+
+/* 3. BASE STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* 4. TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6, .tech-font {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+/* 5. CUSTOM CANDY PALETTE UTILITIES */
+.bg-candy-light-green { background-color: var(--light-green); }
+.bg-candy-watermelon   { background-color: var(--watermelon); }
+.bg-candy-blue-ice    { background-color: var(--baby-blue-ice); }
+.bg-candy-royal-gold   { background-color: var(--royal-gold); }
+.bg-candy-neon-violet  { background-color: var(--neon-violet); }
+.bg-candy-jet-black    { background-color: var(--jet-black); }
+.bg-candy-onyx         { background-color: var(--onyx); }
+.bg-candy-black        { background-color: var(--black); }
+
+.text-candy-light-green { color: var(--light-green); }
+.text-candy-watermelon   { color: var(--watermelon); }
+.text-candy-blue-ice    { color: var(--baby-blue-ice); }
+.text-candy-royal-gold   { color: var(--royal-gold); }
+.text-candy-neon-violet  { color: var(--neon-violet); }
+.text-candy-jet-black    { color: var(--jet-black); }
+.text-candy-alabaster    { color: var(--alabaster-grey); }
+.text-candy-slate        { color: var(--pale-slate); }
+
+.border-candy-watermelon { border-color: var(--watermelon); }
+.border-candy-light-green { border-color: var(--light-green); }
+.border-candy-blue-ice    { border-color: var(--baby-blue-ice); }
+.border-candy-jet-black   { border-color: var(--jet-black); }
+.border-candy-onyx        { border-color: var(--onyx); }
+
+/* 6. GLOW & HOVER EFFECTS */
+.glow-violet:hover {
+  box-shadow: 0 0 20px rgba(198, 77, 236, 0.45);
+  transform: translateY(-1px);
+}
+
+.glow-green:hover {
+  box-shadow: 0 0 20px rgba(114, 247, 160, 0.45);
+  transform: translateY(-1px);
+}
+
+.glow-watermelon:hover {
+  box-shadow: 0 0 20px rgba(237, 38, 77, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Custom interactive transition helper */
+.interactive-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Backdrop Filter Blur for Navigation Header */
+.header-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+```
