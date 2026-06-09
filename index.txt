@@ -1,0 +1,678 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitch.Dunbar — Home</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            candy: {
+              lightGreen: '#72F7A0',
+              watermelon: '#ED264D',
+              babyBlueIce: '#7CB8FF',
+              royalGold: '#F9DD5C',
+              neonViolet: '#C64DEC',
+              jetBlack: '#282C34',
+              onyx: '#131418',
+              black: '#05060A',
+              alabasterGrey: '#DEDFE3',
+              paleSlate: '#C4C8D2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Modern Tech Font Pairing: Space Grotesk (Headers) + Plus Jakarta Sans (Body) */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6, .tech-font {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    /* Candy Palette custom glow effects */
+    .glow-violet:hover {
+      box-shadow: 0 0 20px rgba(198, 77, 236, 0.45);
+    }
+    .glow-green:hover {
+      box-shadow: 0 0 20px rgba(114, 247, 160, 0.45);
+    }
+
+    /* Elegant, smooth anchor scroll-margins matching our header offset (h-16 = 4rem) */
+    section[id] {
+      scroll-margin-top: 4rem;
+    }
+  </style>
+</head>
+<body class="bg-[#F8F9FA] text-candy-jetBlack dark:bg-candy-black dark:text-candy-alabasterGrey transition-colors duration-300 min-h-screen flex flex-col">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#F8F9FA]/80 dark:bg-candy-black/80 border-b border-[#E5E7EB] dark:border-candy-onyx transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight text-candy-jetBlack dark:text-white flex items-center gap-2 group">
+        <span class="w-3 h-3 rounded-full bg-candy-watermelon group-hover:scale-125 transition-transform"></span>
+        <span class="tech-font text-2xl font-bold tracking-tight">Mitch.Dunbar</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-candy-watermelon dark:hover:text-candy-lightGreen transition-colors">About</a>
+        <a href="#projects" class="hover:text-candy-watermelon dark:hover:text-candy-lightGreen transition-colors">Projects</a>
+        <a href="#consultation" class="hover:text-candy-watermelon dark:hover:text-candy-lightGreen transition-colors">Consultation</a>
+        <a href="blog.html" class="hover:text-candy-watermelon dark:hover:text-candy-lightGreen transition-colors">Blog</a>
+      </nav>
+
+      <!-- Utility / Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" onclick="toggleTheme()" class="p-2 rounded-full border border-gray-300 dark:border-candy-onyx hover:bg-gray-100 dark:hover:bg-candy-jetBlack text-candy-jetBlack dark:text-candy-alabasterGrey transition-all" aria-label="Toggle dark mode">
+          <i id="themeIcon" data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#consultation" class="hidden sm:inline-flex text-xs font-semibold uppercase tracking-wider bg-candy-watermelon hover:bg-candy-watermelon/90 text-white px-4 py-2 rounded-lg shadow-sm hover:shadow transition-all">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <!-- SECTION 1: HERO (Indigo Layout Preserved with Tech Font) -->
+    <section class="relative py-20 md:py-32 overflow-hidden border-b border-gray-100 dark:border-candy-onyx">
+      <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side: Author Layout Info -->
+        <div class="md:col-span-7 flex flex-col space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-candy-neonViolet dark:text-candy-lightGreen bg-candy-neonViolet/10 dark:bg-candy-lightGreen/10 px-3 py-1.5 rounded-full w-fit">
+            Independent Developer
+          </span>
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-candy-jetBlack dark:text-white leading-none">
+            I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-candy-watermelon via-candy-neonViolet to-candy-babyBlueIce">Mitch</span>.
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 dark:text-candy-paleSlate font-normal leading-relaxed">
+            Welcome to my portfolio space. I craft elegant, blazing-fast, and minimalist web applications for creators and businesses who love clean systems and robust digital experiences.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3 bg-candy-jetBlack text-white dark:bg-white dark:text-candy-black font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg">
+              View My Work
+              <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#about" class="px-6 py-3 border border-gray-300 dark:border-candy-jetBlack hover:bg-gray-100 dark:hover:bg-candy-onyx font-semibold rounded-lg transition-colors flex items-center gap-2 text-candy-jetBlack dark:text-candy-alabasterGrey">
+              My Profile
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Minimalist Interactive Avatar Graphic -->
+        <div class="md:col-span-5 flex justify-center md:justify-end">
+          <div class="relative w-72 h-72 group">
+            <!-- Background Decorative Geometric Blobs using Candy Palette -->
+            <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-tr from-candy-watermelon to-candy-neonViolet rounded-full filter blur-xl opacity-35 dark:opacity-25 animate-pulse"></div>
+            <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-br from-candy-lightGreen to-candy-babyBlueIce rounded-full filter blur-xl opacity-35 dark:opacity-25"></div>
+            
+            <!-- Modern Styled Device Silhouette or Graphic Box -->
+            <div class="relative w-full h-full bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl p-6 shadow-2xl flex flex-col justify-between transition-transform duration-500 hover:rotate-2">
+              <div class="flex justify-between items-center">
+                <div class="flex gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-candy-watermelon"></span>
+                  <span class="w-3 h-3 rounded-full bg-candy-royalGold"></span>
+                  <span class="w-3 h-3 rounded-full bg-candy-lightGreen"></span>
+                </div>
+                <i data-lucide="terminal" class="w-5 h-5 text-candy-babyBlueIce"></i>
+              </div>
+              <div class="font-mono text-xs text-gray-500 dark:text-candy-paleSlate space-y-2">
+                <p class="text-candy-neonViolet dark:text-candy-lightGreen">const dev = {</p>
+                <p class="pl-4">name: <span class="text-candy-watermelon">"Mitch"</span>,</p>
+                <p class="pl-4">role: <span class="text-candy-babyBlueIce">"Web Developer"</span>,</p>
+                <p class="pl-4">location: <span class="text-candy-royalGold">"Portland, OR"</span>,</p>
+                <p class="pl-4">specialties: [<span class="text-candy-lightGreen">"Jekyll"</span>, <span class="text-candy-lightGreen">"React"</span>]</p>
+                <p class="text-candy-neonViolet dark:text-candy-lightGreen">};</p>
+              </div>
+              <div class="flex justify-between items-center text-xs text-gray-400">
+                <span>Compilation: SUCCESS</span>
+                <span class="w-2 h-2 rounded-full bg-candy-lightGreen animate-ping"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT (Mitch.Dunbar Info & Premium Social Grid) -->
+    <section id="about" class="py-20 bg-white dark:bg-candy-onyx/30 border-b border-gray-100 dark:border-candy-onyx">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          
+          <!-- Mitch.Dunbar Bio Info & Graphic -->
+          <div class="md:col-span-6 space-y-6">
+            
+            <!-- Circle Masked Mitch Avatar (IMG_4899) right above the About Title -->
+            <div class="relative w-28 h-28 group">
+              <!-- Background Border Glow -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-candy-watermelon via-candy-neonViolet to-candy-babyBlueIce rounded-full opacity-40 blur-md group-hover:rotate-12 transition-transform duration-500"></div>
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-candy-neonViolet to-candy-watermelon rounded-full opacity-80"></div>
+              
+              <!-- Perfect Circle Image Container -->
+              <div class="relative w-full h-full rounded-full overflow-hidden bg-candy-black border-2 border-white dark:border-candy-onyx shadow-lg aspect-square">
+                <img 
+                  src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/refs/heads/main/images/IMG_4899.jpeg" 
+                  alt="Mitch Dunbar" 
+                  class="w-full h-full rounded-full aspect-square object-cover object-center"
+                />
+              </div>
+            </div>
+
+            <h2 class="text-4xl font-bold tracking-tight text-candy-jetBlack dark:text-white">
+              About <span class="text-candy-watermelon">Mitch.Dunbar</span>
+            </h2>
+            <p class="text-gray-600 dark:text-candy-paleSlate leading-relaxed">
+              Based in the creative hub of Portland, Oregon, I represent a focused approach to modern front-end engineering, custom automation workflows, and tailored layout design. Guided by a minimalist philosophy and optimized speed budgets, I build high-performance assets designed to load rapidly on any connection.
+            </p>
+            <p class="text-gray-600 dark:text-candy-paleSlate leading-relaxed">
+              Whether you need lightweight Jekyll websites, responsive single-page landing tools, or customized content platforms, my process places clear interfaces, user accessibility, and vivid color expressions at the core of everything I build.
+            </p>
+            
+            <!-- Graphic / Feature highlights -->
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div class="p-4 rounded-xl border border-gray-200 dark:border-candy-jetBlack bg-[#F8F9FA] dark:bg-candy-black/50">
+                <h3 class="font-bold text-candy-neonViolet dark:text-candy-lightGreen text-2xl">99+</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">Typical Core Speed Metrics</p>
+              </div>
+              <div class="p-4 rounded-xl border border-gray-200 dark:border-candy-jetBlack bg-[#F8F9FA] dark:bg-candy-black/50">
+                <h3 class="font-bold text-candy-watermelon text-2xl">100%</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">Responsive Code Standards</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Social Links and Direct Contact -->
+          <div class="md:col-span-6 space-y-6">
+            <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-200 dark:border-candy-jetBlack rounded-2xl">
+              <h3 class="text-xl font-bold mb-6 text-candy-jetBlack dark:text-white flex items-center gap-2">
+                <i data-lucide="share-2" class="w-5 h-5 text-candy-watermelon"></i>
+                Connect Directly
+              </h3>
+              
+              <!-- Social Channels Grid with Vector SVG Icons -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- Email -->
+                <a href="mailto:thatmitch247@gmail.com" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-candy-watermelon/10 hover:border-candy-watermelon/50 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-candy-watermelon/10 text-candy-watermelon group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-400 block">Email Me</span>
+                    <span class="text-sm font-semibold truncate max-w-[150px] block">thatmitch247</span>
+                  </div>
+                </a>
+
+                <!-- Phone -->
+                <a href="tel:+19712821665" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-candy-lightGreen/20 hover:border-candy-lightGreen/50 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-candy-lightGreen/10 text-candy-lightGreen dark:text-candy-lightGreen group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-400 block">Message Directly</span>
+                    <span class="text-sm font-semibold truncate block">+1 (971) 282-1665</span>
+                  </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://GitHub.com/thatmitch247" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-babyBlueIce/20 hover:border-candy-babyBlueIce/50 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-candy-babyBlueIce/10 text-candy-babyBlueIce group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.57-.22 1.16-.15 1.75v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-400 block">GitHub Profile</span>
+                    <span class="text-sm font-semibold block">@thatmitch247</span>
+                  </div>
+                </a>
+
+                <!-- Blog -->
+                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-neonViolet/20 hover:border-candy-neonViolet/50 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-candy-neonViolet/10 text-candy-neonViolet group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-400 block">Tech Blog</span>
+                    <span class="text-sm font-semibold block">thatmitch247 / blog</span>
+                  </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://Instagram.com/thatmitch247" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-pink-500/10 hover:border-pink-500/50 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-pink-500/10 text-pink-500 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-400 block">Instagram</span>
+                    <span class="text-sm font-semibold block">@thatmitch247</span>
+                  </div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/thatmitch" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-blue-600/10 hover:border-blue-600/50 transition-all group">
+                  <div class="p-2.5 rounded-lg bg-blue-600/10 text-blue-600 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-400 block">Facebook</span>
+                    <span class="text-sm font-semibold block">@thatmitch</span>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RECENT PROJECTS (Mobile-First 3x2 Grid) -->
+    <section id="projects" class="py-20 border-b border-gray-100 dark:border-candy-onyx">
+      <div class="max-w-5xl mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-candy-watermelon">Portfolio</span>
+          <h2 class="text-4xl font-bold tracking-tight text-candy-jetBlack dark:text-white">
+            Recent Work
+          </h2>
+          <p class="text-gray-500 dark:text-candy-paleSlate text-sm md:text-base">
+            Explore my latest high-performance applications, minimalist themes, and bespoke engineering releases.
+          </p>
+        </div>
+
+        <!-- 3x2 Grid on large screens, 1x6 on smallest (mobile) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Plumma -->
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
+            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
+              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_plumber_netlify_app_desktop_mockup.png" alt="Plumma Project Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-candy-watermelon text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Commercial</span>
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="space-y-2">
+                <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">Plumma Framework</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                  A high-conversion emergency plumbing platform designed for structural performance and instantaneous lead generation.
+                </p>
+              </div>
+              <a href="https://m-dunbar-plumber.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-watermelon text-candy-watermelon hover:bg-candy-watermelon hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>View Live Demo</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: DeLuxarre Interiors -->
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
+            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
+              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_interior_design_netlify_app_desktop_mockup.png" alt="DeLuxarre Interiors Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-candy-neonViolet text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Bespoke UI</span>
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="space-y-2">
+                <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">DeLuxarre Interiors</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                  An elegant premium design experience engineered with micro-interactions, modal consultation planners, and parallax scroll layouts.
+                </p>
+              </div>
+              <a href="https://m-dunbar-interior-design.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-neonViolet text-candy-neonViolet hover:bg-candy-neonViolet hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>View Live Demo</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: AuraMed -->
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
+            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
+              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_med_spa_netlify_app_desktop_mockup%202.png" alt="AuraMed Spa Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-candy-babyBlueIce text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Aesthetics</span>
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="space-y-2">
+                <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">AuraMed Med Spa</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                  A pristine aesthetics interface utilizing dynamic non-reloading treatment tabs, credential highlights, and blurred sticky panels.
+                </p>
+              </div>
+              <a href="https://m-dunbar-med-spa.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-babyBlueIce text-candy-babyBlueIce hover:bg-candy-babyBlueIce hover:text-candy-jetBlack text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>View Live Demo</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: TerraForm -->
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
+            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
+              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_landscaper_netlify_app_desktop_mockup.png" alt="TerraForm Landscape Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-candy-lightGreen text-candy-black text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Eco Dev</span>
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="space-y-2">
+                <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">TerraForm Architecture</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                  Eco-conscious landing architecture displaying project estimators, seasonal badges, and custom high-contrast masonry galleries.
+                </p>
+              </div>
+              <a href="https://m-dunbar-landscaper.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-lightGreen text-candy-lightGreen dark:text-candy-lightGreen dark:hover:bg-candy-lightGreen dark:hover:text-candy-black text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>View Live Demo</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 5: GloveBox -->
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
+            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
+              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_mobile_app_netlify_app_desktop_mockup.png" alt="GloveBox App Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-candy-royalGold text-candy-black text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Mobile</span>
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="space-y-2">
+                <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">GloveBox Ledger</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                  Vehicle catalog timeline log highlighting device-frame mockup matrices, release timeline steps, and complete dark optimization.
+                </p>
+              </div>
+              <a href="https://m-dunbar-mobile-app.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-royalGold text-candy-royalGold hover:bg-candy-royalGold hover:text-candy-black text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>View Live Demo</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 6: Unpacked -->
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
+            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
+              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_podcast_netlify_app_desktop_mockup.png" alt="Unpacked Podcast Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-candy-neonViolet text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Podcast</span>
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="space-y-2">
+                <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">Unpacked Frame</h3>
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                  Media-centric ecosystem containing custom HTML5 audio integrations, dynamic host profiles, and collapsible text tray architectures.
+                </p>
+              </div>
+              <a href="https://m-dunbar-podcast.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-neonViolet text-candy-neonViolet hover:bg-candy-neonViolet hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>View Live Demo</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CONSULTATION FORM -->
+    <section id="consultation" class="py-20 bg-white dark:bg-candy-onyx/30 border-b border-gray-100 dark:border-candy-onyx">
+      <div class="max-w-xl mx-auto px-6">
+        
+        <div class="text-center mb-10 space-y-3">
+          <span class="text-xs font-bold uppercase tracking-widest text-candy-neonViolet">Connect</span>
+          <h2 class="text-4xl font-bold tracking-tight text-candy-jetBlack dark:text-white">Request a Consultation</h2>
+          <p class="text-gray-500 dark:text-candy-paleSlate text-sm">
+            Ready to build or scale your next project? Provide your details below, and I will connect with you shortly.
+          </p>
+        </div>
+
+        <!-- Alert Notification Box for Form Errors -->
+        <div id="formError" class="hidden mb-6 p-4 bg-candy-watermelon/10 border border-candy-watermelon rounded-xl text-center text-xs font-medium text-candy-watermelon flex items-center justify-center gap-2">
+          <i data-lucide="alert-circle" class="w-4 h-4 shrink-0"></i>
+          <span id="formErrorMessage">An error occurred while sending your request.</span>
+        </div>
+
+        <!-- Consultation Form with Interactive State Handling and POST inputs -->
+        <form id="consultationForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+          
+          <div class="space-y-1">
+            <label for="clientName" class="text-xs font-bold uppercase tracking-wider text-candy-jetBlack dark:text-candy-alabasterGrey">Name</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                <i data-lucide="user" class="w-4 h-4"></i>
+              </div>
+              <input type="text" id="clientName" name="name" required class="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-candy-black border border-gray-200 dark:border-candy-jetBlack rounded-xl focus:ring-2 focus:ring-candy-watermelon focus:border-transparent outline-none transition-all text-sm text-candy-jetBlack dark:text-white" placeholder="Mitch Dunbar">
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label for="clientPhone" class="text-xs font-bold uppercase tracking-wider text-candy-jetBlack dark:text-candy-alabasterGrey">Phone Number</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </div>
+              <input type="tel" id="clientPhone" name="phone" required class="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-candy-black border border-gray-200 dark:border-candy-jetBlack rounded-xl focus:ring-2 focus:ring-candy-watermelon focus:border-transparent outline-none transition-all text-sm text-candy-jetBlack dark:text-white" placeholder="+1 (971) 282-1665">
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label for="clientEmail" class="text-xs font-bold uppercase tracking-wider text-candy-jetBlack dark:text-candy-alabasterGrey">Email Address</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <input type="email" id="clientEmail" name="email" required class="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-candy-black border border-gray-200 dark:border-candy-jetBlack rounded-xl focus:ring-2 focus:ring-candy-watermelon focus:border-transparent outline-none transition-all text-sm text-candy-jetBlack dark:text-white" placeholder="thatmitch247@gmail.com">
+            </div>
+          </div>
+
+          <!-- Future releases subscribe toggle -->
+          <div class="flex items-start gap-3 p-4 bg-gray-50 dark:bg-candy-black/60 border border-gray-150 dark:border-candy-jetBlack rounded-xl">
+            <div class="flex items-center h-5">
+              <input type="checkbox" id="subscribeNews" name="subscribe" value="yes" class="w-4.5 h-4.5 text-candy-watermelon border-gray-300 dark:border-candy-jetBlack rounded focus:ring-candy-watermelon cursor-pointer">
+            </div>
+            <label for="subscribeNews" class="text-xs text-gray-600 dark:text-candy-paleSlate cursor-pointer select-none leading-relaxed">
+              Want to get emails about my future dev releases and apps?
+            </label>
+          </div>
+
+          <button type="submit" class="w-full py-4 px-6 bg-candy-watermelon text-white font-bold uppercase tracking-wider rounded-xl hover:bg-candy-watermelon/90 shadow-lg glow-violet transition-all duration-300 flex items-center justify-center gap-2">
+            <span>Send Request</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+
+        <!-- Custom Visual Form Success Message -->
+        <div id="formSuccess" class="hidden p-6 bg-candy-lightGreen/10 border border-candy-lightGreen rounded-2xl text-center space-y-4 animate-fade-in">
+          <div class="w-12 h-12 bg-candy-lightGreen/20 text-candy-lightGreen rounded-full flex items-center justify-center mx-auto">
+            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white">Request Received!</h3>
+          <p class="text-xs text-gray-600 dark:text-candy-paleSlate">
+            Thanks for reaching out. I will get back to you as soon as possible.
+          </p>
+          <button onclick="resetForm()" class="text-xs text-candy-watermelon hover:underline font-semibold block mx-auto">
+            Submit another query
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: UPCOMING BLOG / PODCAST -->
+    <section id="blog" class="py-24 relative overflow-hidden bg-candy-jetBlack text-white dark:bg-candy-black">
+      <!-- Decorative radial gradient background -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(198,77,236,0.15),transparent_40%)]"></div>
+      
+      <div class="max-w-5xl mx-auto px-6 relative z-10 text-center space-y-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-candy-watermelon/20 border border-candy-watermelon/30 rounded-full text-candy-watermelon text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="radio" class="w-3.5 h-3.5 animate-pulse"></i> Broadcast Channel
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight max-w-3xl mx-auto leading-tight">
+          Check back soon to see my upcoming <span class="text-transparent bg-clip-text bg-gradient-to-r from-candy-lightGreen to-candy-babyBlueIce">tech blog</span> and <span class="text-transparent bg-clip-text bg-gradient-to-r from-candy-babyBlueIce to-candy-neonViolet">podcast</span>!
+        </h2>
+        
+        <p class="text-lg md:text-xl text-candy-paleSlate max-w-xl mx-auto tech-font italic font-medium">
+          “Coming soon to an Internet near you!”
+        </p>
+
+        <!-- Newsletter fast-signup indicator -->
+        <div class="max-w-md mx-auto pt-4 flex gap-2">
+          <div class="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 text-sm text-candy-paleSlate">
+            <i data-lucide="bell" class="w-4 h-4 text-candy-royalGold animate-bounce"></i>
+            <span>Be notified as soon as Episode 1 drops</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 dark:bg-candy-black border-t border-gray-200 dark:border-candy-onyx py-12 transition-colors duration-300">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center space-y-6 text-center">
+      
+      <!-- Back to Top Link -->
+      <a href="#" class="p-3 bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-full hover:-translate-y-1 hover:border-candy-watermelon transition-all group shadow-sm" aria-label="Back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5 text-candy-jetBlack dark:text-candy-alabasterGrey group-hover:text-candy-watermelon transition-colors"></i>
+      </a>
+      <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400 dark:text-candy-paleSlate">Back to Top</span>
+
+      <!-- Divider -->
+      <div class="w-24 h-px bg-gray-300 dark:bg-candy-onyx"></div>
+
+      <!-- Copyright Notice with Date -->
+      <p class="text-xs text-gray-500 dark:text-candy-paleSlate leading-relaxed">
+        &copy; 2026 <span class="font-semibold text-candy-jetBlack dark:text-white">Mitch.Dunbar</span>. All rights reserved. 
+        <br>
+        Crafted with minimal dependencies and responsive elegance.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE LOGIC SCRIPT -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Toggle Dark / Light Theme logic
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('themeIcon');
+      
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.setAttribute('data-lucide', 'moon');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.setAttribute('data-lucide', 'sun');
+        localStorage.setItem('theme', 'dark');
+      }
+      lucide.createIcons();
+    }
+
+    // Load initial theme state
+    window.addEventListener('load', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const html = document.documentElement;
+      const icon = document.getElementById('themeIcon');
+      
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        html.classList.remove('dark');
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    });
+
+    // Form submission processing with AJAX fetch to PHP
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('consultationForm');
+      const successDiv = document.getElementById('formSuccess');
+      const errorDiv = document.getElementById('formError');
+      const errorMessage = document.getElementById('formErrorMessage');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const submitBtnText = submitBtn.querySelector('span');
+
+      // Setup processing/loading state
+      errorDiv.classList.add('hidden');
+      submitBtn.disabled = true;
+      const originalText = submitBtnText.textContent;
+      submitBtnText.textContent = "Processing Request...";
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('send-email.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          form.classList.add('hidden');
+          successDiv.classList.remove('hidden');
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          errorMessage.textContent = result.message || "An issue occurred while sending your request. Please try again.";
+          errorDiv.classList.remove('hidden');
+          errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } catch (err) {
+        console.error("AJAX Error:", err);
+        errorMessage.textContent = "Unable to connect to the server. Please check your network connection.";
+        errorDiv.classList.remove('hidden');
+        errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        submitBtn.disabled = false;
+        submitBtnText.textContent = originalText;
+        lucide.createIcons();
+      }
+    }
+
+    // Form state reset
+    function resetForm() {
+      const form = document.getElementById('consultationForm');
+      const successDiv = document.getElementById('formSuccess');
+      const errorDiv = document.getElementById('formError');
+      
+      form.reset();
+      errorDiv.classList.add('hidden');
+      successDiv.classList.add('hidden');
+      form.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+
+```
