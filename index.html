@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mitch.Dunbar — Home</title>
   
+  <!-- Favicon Reference -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
@@ -66,9 +69,14 @@
   <!-- NAVIGATION HEADER -->
   <header class="sticky top-0 z-50 backdrop-blur-md bg-[#F8F9FA]/80 dark:bg-candy-black/80 border-b border-[#E5E7EB] dark:border-candy-onyx transition-all duration-300">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold tracking-tight text-candy-jetBlack dark:text-white flex items-center gap-2 group">
-        <span class="w-3 h-3 rounded-full bg-candy-watermelon group-hover:scale-125 transition-transform"></span>
-        <span class="tech-font text-2xl font-bold tracking-tight">Mitch.Dunbar</span>
+      <a href="#" class="text-xl font-bold tracking-tight text-candy-jetBlack dark:text-white flex items-center gap-2.5 group">
+        <img 
+          src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/ab864ed109b2792473279a4e2c5e9191d0c79231/assets/images/Squiggle-M-Logo.png" 
+          alt="Logo" 
+          class="w-7 h-7 object-contain group-hover:rotate-6 transition-transform duration-300"
+          onerror="this.style.opacity='0.5'"
+        />
+        <span class="tech-font text-2xl font-bold tracking-tight">&lt;Portfolio/&gt;</span>
       </a>
 
       <!-- Desktop Nav -->
@@ -81,6 +89,11 @@
 
       <!-- Utility / Actions -->
       <div class="flex items-center gap-3">
+        <!-- Share Button (Always circular, matches light/dark toggle style) -->
+        <button onclick="sharePage()" class="flex p-2 rounded-full border border-gray-300 dark:border-candy-onyx hover:bg-gray-100 dark:hover:bg-candy-jetBlack text-candy-jetBlack dark:text-candy-alabasterGrey transition-all" aria-label="Share page">
+          <i data-lucide="share-2" class="w-5 h-5"></i>
+        </button>
+
         <!-- Theme Toggle -->
         <button id="themeToggle" onclick="toggleTheme()" class="p-2 rounded-full border border-gray-300 dark:border-candy-onyx hover:bg-gray-100 dark:hover:bg-candy-jetBlack text-candy-jetBlack dark:text-candy-alabasterGrey transition-all" aria-label="Toggle dark mode">
           <i id="themeIcon" data-lucide="moon" class="w-5 h-5"></i>
@@ -96,7 +109,7 @@
 
   <main class="flex-grow">
     
-    <!-- SECTION 1: HERO (Indigo Layout Preserved with Tech Font) -->
+    <!-- SECTION 1: HERO -->
     <section class="relative py-20 md:py-32 overflow-hidden border-b border-gray-100 dark:border-candy-onyx">
       <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         
@@ -158,139 +171,319 @@
       </div>
     </section>
 
-    <!-- SECTION 2: ABOUT (Mitch.Dunbar Info & Premium Social Grid) -->
-    <section id="about" class="py-20 bg-white dark:bg-candy-onyx/30 border-b border-gray-100 dark:border-candy-onyx">
+    <!-- SECTION 2: ABOUT MITCH (Circular Portrait Centered, Groups broken down, Flashy Tech Schemes) -->
+    <section id="about" class="py-24 bg-white dark:bg-candy-onyx/30 border-b border-gray-100 dark:border-candy-onyx">
       <div class="max-w-5xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          
-          <!-- Mitch.Dunbar Bio Info & Graphic -->
-          <div class="md:col-span-6 space-y-6">
+        
+        <!-- Central Profile Portrait Area -->
+        <div class="flex flex-col items-center justify-center text-center mb-16">
+          <div class="relative w-36 h-36 md:w-44 md:h-44 group mb-6">
+            <!-- Neon breathing outer gradient glow rings -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-candy-watermelon via-candy-neonViolet to-candy-lightGreen rounded-full opacity-60 blur-md group-hover:scale-110 transition-all duration-500 animate-pulse"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-candy-watermelon via-candy-neonViolet to-candy-lightGreen rounded-full p-1"></div>
             
-            <!-- Circle Masked Mitch Avatar (IMG_4899) right above the About Title -->
-            <div class="relative w-28 h-28 group">
-              <!-- Background Border Glow -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-candy-watermelon via-candy-neonViolet to-candy-babyBlueIce rounded-full opacity-40 blur-md group-hover:rotate-12 transition-transform duration-500"></div>
-              <div class="absolute -inset-0.5 bg-gradient-to-r from-candy-neonViolet to-candy-watermelon rounded-full opacity-80"></div>
-              
-              <!-- Perfect Circle Image Container -->
-              <div class="relative w-full h-full rounded-full overflow-hidden bg-candy-black border-2 border-white dark:border-candy-onyx shadow-lg aspect-square">
-                <img 
-                  src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/refs/heads/main/images/IMG_4899.jpeg" 
-                  alt="Mitch Dunbar" 
-                  class="w-full h-full rounded-full aspect-square object-cover object-center"
-                />
-              </div>
+            <!-- Perfect Circle Avatar Frame with PNG Image -->
+            <div class="relative w-full h-full rounded-full overflow-hidden bg-candy-black border-2 border-white dark:border-candy-onyx shadow-2xl aspect-square">
+              <img 
+                src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/refs/heads/main/images/IMG_4954.png" 
+                alt="Mitch Dunbar - Portfolio Headshot" 
+                class="w-full h-full rounded-full aspect-square object-cover object-center"
+              />
             </div>
+          </div>
+          
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-candy-jetBlack dark:text-white">
+            Who is <span class="text-transparent bg-clip-text bg-gradient-to-r from-candy-watermelon to-candy-neonViolet">Mitch Dunbar?</span>
+          </h2>
+          <p class="text-candy-neonViolet dark:text-candy-lightGreen text-sm font-semibold uppercase tracking-widest mt-2 tech-font">
+            Independent Front-End Developer & UI Architect
+          </p>
+        </div>
 
-            <h2 class="text-4xl font-bold tracking-tight text-candy-jetBlack dark:text-white">
-              About <span class="text-candy-watermelon">Mitch.Dunbar</span>
-            </h2>
-            <p class="text-gray-600 dark:text-candy-paleSlate leading-relaxed">
-              Based in the creative hub of Portland, Oregon, I represent a focused approach to modern front-end engineering, custom automation workflows, and tailored layout design. Guided by a minimalist philosophy and optimized speed budgets, I build high-performance assets designed to load rapidly on any connection.
-            </p>
-            <p class="text-gray-600 dark:text-candy-paleSlate leading-relaxed">
-              Whether you need lightweight Jekyll websites, responsive single-page landing tools, or customized content platforms, my process places clear interfaces, user accessibility, and vivid color expressions at the core of everything I build.
-            </p>
+        <!-- Dynamic Group Layouts -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+          
+          <!-- Column A: Personal Bio / Highlights (6 Cols) -->
+          <div class="lg:col-span-6 space-y-6">
+            <h3 class="text-2xl font-bold text-candy-jetBlack dark:text-white flex items-center gap-2 mb-4">
+              <span class="w-2.5 h-6 bg-candy-watermelon rounded-full"></span>
+              Key Data, Important Info. & Highlights
+            </h3>
             
-            <!-- Graphic / Feature highlights -->
-            <div class="grid grid-cols-2 gap-4 pt-4">
-              <div class="p-4 rounded-xl border border-gray-200 dark:border-candy-jetBlack bg-[#F8F9FA] dark:bg-candy-black/50">
-                <h3 class="font-bold text-candy-neonViolet dark:text-candy-lightGreen text-2xl">99+</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">Typical Core Speed Metrics</p>
+            <!-- EXCLUSIVELY REWRITTEN AND DECORATED HTML PORTFOLIO BLOCKS -->
+            <div class="space-y-6">
+              
+              <!-- Block 1: Professional Profile -->
+              <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-150 dark:border-candy-jetBlack rounded-2xl shadow-sm space-y-4 transition-all duration-300 hover:border-candy-watermelon/50 group">
+                <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white flex items-center gap-2">
+                  <span class="p-1.5 rounded-lg bg-candy-watermelon/10 text-candy-watermelon group-hover:scale-105 transition-transform">
+                    <i data-lucide="user-check" class="w-4 h-4"></i>
+                  </span>
+                  Professional Profile
+                </h4>
+                <p class="text-gray-600 dark:text-candy-paleSlate text-sm leading-relaxed">
+                  A veteran digital creator and software engineer with over <strong class="text-candy-jetBlack dark:text-white font-semibold">25 years of hands-on experience</strong> bridging the gap between high-end graphic design and robust code. From building client sites at age 16 to scaling projects at Fortune 500 enterprises, I specialize in delivering high-performance digital solutions that combine sleek minimalist aesthetics with clean architecture.
+                </p>
+                <ul class="space-y-2.5 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-candy-paleSlate border-t border-gray-200 dark:border-candy-jetBlack pt-3">
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span><span class="text-candy-watermelon">Current Location:</span> Portland, Oregon (Remote nationwide)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span><span class="text-candy-watermelon">Roles:</span> Web Dev, App Dev, Tech Consultant</span>
+                  </li>
+                </ul>
               </div>
-              <div class="p-4 rounded-xl border border-gray-200 dark:border-candy-jetBlack bg-[#F8F9FA] dark:bg-candy-black/50">
-                <h3 class="font-bold text-candy-watermelon text-2xl">100%</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">Responsive Code Standards</p>
+
+              <!-- Block 2: Key Corporate & Leadership Experience -->
+              <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-150 dark:border-candy-jetBlack rounded-2xl shadow-sm space-y-4 transition-all duration-300 hover:border-candy-neonViolet/50 group">
+                <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white flex items-center gap-2">
+                  <span class="p-1.5 rounded-lg bg-candy-neonViolet/10 text-candy-neonViolet group-hover:scale-105 transition-transform">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                  </span>
+                  Key Corporate & Leadership Experience
+                </h4>
+                <ul class="space-y-3 text-xs md:text-sm text-gray-600 dark:text-candy-paleSlate">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-neonViolet mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Fortune 500 Impact:</strong> Spent multiple years embedded in elite engineering and tech teams at industry leaders, most notably <strong class="text-candy-jetBlack dark:text-white">Apple</strong> and <strong class="text-candy-jetBlack dark:text-white">Comcast’s Xfinity</strong>.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-neonViolet mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Team Leadership:</strong> Proven track record directing cross-functional development teams ranging from <strong class="text-candy-jetBlack dark:text-white">4 to 20 engineers</strong> for mid-sized initiatives.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-neonViolet mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Proven Volume:</strong> Over my career, I have architecturalized, designed, and successfully shipped <strong class="text-candy-jetBlack dark:text-white">over 100 websites</strong> for a diverse array of businesses and clients.</span>
+                  </li>
+                </ul>
               </div>
+
+              <!-- Block 3: Development Strong Suits -->
+              <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-150 dark:border-candy-jetBlack rounded-2xl shadow-sm space-y-4 transition-all duration-300 hover:border-candy-lightGreen/50 group">
+                <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white flex items-center gap-2">
+                  <span class="p-1.5 rounded-lg bg-candy-lightGreen/15 text-candy-lightGreen group-hover:scale-105 transition-transform">
+                    <i data-lucide="code" class="w-4 h-4"></i>
+                  </span>
+                  Development Strong Suits
+                </h4>
+                <ul class="space-y-3 text-xs md:text-sm text-gray-600 dark:text-candy-paleSlate">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Frontend Architecture & Design:</strong> Specializing in cutting-edge web interfaces, modern layout engines, fluid responsive architectures, and precise visual aesthetics.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Branding & Digital Marketing:</strong> Marrying clean code with technical SEO, optimizing performance budgets, and crafting cohesive brand guidelines across the web.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Mobile Ecosystems:</strong> Experienced in mobile app engineering, having built, optimized, and published multiple production apps and mobile games across the <strong class="text-candy-jetBlack dark:text-white">iOS App Store</strong> and <strong class="text-candy-jetBlack dark:text-white">Google Play</strong>.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Block 4: Personal History -->
+              <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-150 border-candy-babyBlueIce/50 rounded-2xl shadow-sm space-y-4 transition-all duration-300 hover:border-candy-babyBlueIce/50 group">
+                <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white flex items-center gap-2">
+                  <span class="p-1.5 rounded-lg bg-candy-babyBlueIce/15 text-candy-babyBlueIce group-hover:scale-105 transition-transform">
+                    <i data-lucide="history" class="w-4 h-4"></i>
+                  </span>
+                  Personal History
+                </h4>
+                <ul class="space-y-3 text-xs md:text-sm text-gray-600 dark:text-candy-paleSlate">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-babyBlueIce mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Early Foundations:</strong> Originally from <strong class="text-candy-jetBlack dark:text-white">Baltimore, Maryland</strong>, my career technically started before I could legally drive. I was working as a professional graphic designer in my early teens.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-babyBlueIce mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Self-Taught Roots:</strong> Fell in love with web programming during my Sophomore year of high school and landed my first paying development clients by age 16.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-babyBlueIce mt-2 shrink-0"></span>
+                    <span><strong class="text-candy-jetBlack dark:text-white">Evolution:</strong> In my early 20s, I expanded my technical toolkit from static web design into interactive application engineering, leading to a lifelong focus on building high-utility digital workflows.</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
-          <!-- Dynamic Social Links and Direct Contact -->
-          <div class="md:col-span-6 space-y-6">
-            <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-200 dark:border-candy-jetBlack rounded-2xl">
-              <h3 class="text-xl font-bold mb-6 text-candy-jetBlack dark:text-white flex items-center gap-2">
-                <i data-lucide="share-2" class="w-5 h-5 text-candy-watermelon"></i>
-                Connect Directly
-              </h3>
+          <!-- Column B: Interactive Skills Radar / Competencies (6 Cols) -->
+          <div class="lg:col-span-6 space-y-6">
+            <h3 class="text-2xl font-bold text-candy-jetBlack dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-6 bg-candy-neonViolet rounded-full"></span>
+              Technical Weapons
+            </h3>
+            
+            <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-200 dark:border-candy-jetBlack rounded-2xl space-y-4 shadow-sm">
+              <!-- Skill 1 -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-1.5">
+                  <span class="text-candy-jetBlack dark:text-white">Jekyll & Static Site Architecture</span>
+                  <span class="text-candy-watermelon">98%</span>
+                </div>
+                <div class="w-full h-2.5 bg-gray-200 dark:bg-candy-jetBlack rounded-full overflow-hidden">
+                  <div class="h-full bg-candy-watermelon rounded-full" style="width: 98%"></div>
+                </div>
+              </div>
               
-              <!-- Social Channels Grid with Vector SVG Icons -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                
-                <!-- Email -->
-                <a href="mailto:thatmitch247@gmail.com" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-candy-watermelon/10 hover:border-candy-watermelon/50 transition-all group">
-                  <div class="p-2.5 rounded-lg bg-candy-watermelon/10 text-candy-watermelon group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  </div>
-                  <div>
-                    <span class="text-xs text-gray-400 block">Email Me</span>
-                    <span class="text-sm font-semibold truncate max-w-[150px] block">thatmitch247</span>
-                  </div>
-                </a>
+              <!-- Skill 2 -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-1.5">
+                  <span class="text-candy-jetBlack dark:text-white">Tailwind CSS & Utility Frameworks</span>
+                  <span class="text-candy-lightGreen">95%</span>
+                </div>
+                <div class="w-full h-2.5 bg-gray-200 dark:bg-candy-jetBlack rounded-full overflow-hidden">
+                  <div class="h-full bg-candy-lightGreen rounded-full" style="width: 95%"></div>
+                </div>
+              </div>
 
-                <!-- Phone -->
-                <a href="tel:+19712821665" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-candy-lightGreen/20 hover:border-candy-lightGreen/50 transition-all group">
-                  <div class="p-2.5 rounded-lg bg-candy-lightGreen/10 text-candy-lightGreen dark:text-candy-lightGreen group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  </div>
-                  <div>
-                    <span class="text-xs text-gray-400 block">Message Directly</span>
-                    <span class="text-sm font-semibold truncate block">+1 (971) 282-1665</span>
-                  </div>
-                </a>
+              <!-- Skill 3 -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-1.5">
+                  <span class="text-candy-jetBlack dark:text-white">React & Interactive Frontend Engine</span>
+                  <span class="text-candy-babyBlueIce">90%</span>
+                </div>
+                <div class="w-full h-2.5 bg-gray-200 dark:bg-candy-jetBlack rounded-full overflow-hidden">
+                  <div class="h-full bg-candy-babyBlueIce rounded-full" style="width: 90%"></div>
+                </div>
+              </div>
 
-                <!-- GitHub -->
-                <a href="https://GitHub.com/thatmitch247" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-babyBlueIce/20 hover:border-candy-babyBlueIce/50 transition-all group">
-                  <div class="p-2.5 rounded-lg bg-candy-babyBlueIce/10 text-candy-babyBlueIce group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.57-.22 1.16-.15 1.75v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                  </div>
-                  <div>
-                    <span class="text-xs text-gray-400 block">GitHub Profile</span>
-                    <span class="text-sm font-semibold block">@thatmitch247</span>
-                  </div>
-                </a>
-
-                <!-- Blog -->
-                <a href="blog.html" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-neonViolet/20 hover:border-candy-neonViolet/50 transition-all group">
-                  <div class="p-2.5 rounded-lg bg-candy-neonViolet/10 text-candy-neonViolet group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                  </div>
-                  <div>
-                    <span class="text-xs text-gray-400 block">Tech Blog</span>
-                    <span class="text-sm font-semibold block">thatmitch247 / blog</span>
-                  </div>
-                </a>
-
-                <!-- Instagram -->
-                <a href="https://Instagram.com/thatmitch247" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-pink-500/10 hover:border-pink-500/50 transition-all group">
-                  <div class="p-2.5 rounded-lg bg-pink-500/10 text-pink-500 group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                  </div>
-                  <div>
-                    <span class="text-xs text-gray-400 block">Instagram</span>
-                    <span class="text-sm font-semibold block">@thatmitch247</span>
-                  </div>
-                </a>
-
-                <!-- Facebook -->
-                <a href="https://facebook.com/thatmitch" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 dark:border-candy-jetBlack hover:bg-blue-600/10 hover:border-blue-600/50 transition-all group">
-                  <div class="p-2.5 rounded-lg bg-blue-600/10 text-blue-600 group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                  </div>
-                  <div>
-                    <span class="text-xs text-gray-400 block">Facebook</span>
-                    <span class="text-sm font-semibold block">@thatmitch</span>
-                  </div>
-                </a>
-
+              <!-- Skill 4 -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-1.5">
+                  <span class="text-candy-jetBlack dark:text-white">Netlify, Jamstack, & CI/CD Pipelines</span>
+                  <span class="text-candy-royalGold">92%</span>
+                </div>
+                <div class="w-full h-2.5 bg-gray-200 dark:bg-candy-jetBlack rounded-full overflow-hidden">
+                  <div class="h-full bg-candy-royalGold rounded-full" style="width: 92%"></div>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
+
+        <!-- Three-Pillar Strategy Board -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          
+          <div class="p-6 bg-[#F8F9FA] dark:bg-candy-onyx/20 border-t-4 border-candy-watermelon rounded-2xl shadow-sm space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-candy-watermelon/15 text-candy-watermelon flex items-center justify-center">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white">99+ Speed Audits</h4>
+            <p class="text-xs text-gray-500 dark:text-candy-paleSlate leading-relaxed">
+              Every site is built with a strict asset budget. Compressed code execution ensures ultra-low latencies and flawless indexing capabilities.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[#F8F9FA] dark:bg-candy-onyx/20 border-t-4 border-candy-neonViolet rounded-2xl shadow-sm space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-candy-neonViolet/15 text-candy-neonViolet flex items-center justify-center">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white">Tailored Brand Systems</h4>
+            <p class="text-xs text-gray-500 dark:text-candy-paleSlate leading-relaxed">
+              No generic designs. I construct memorable interfaces complete with fluid responsive alignments, theme wrappers, and elegant transitions.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[#F8F9FA] dark:bg-candy-onyx/20 border-t-4 border-candy-lightGreen rounded-2xl shadow-sm space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-candy-lightGreen/15 text-candy-lightGreen flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-lg font-bold text-candy-jetBlack dark:text-white">Clean Semantics Only</h4>
+            <p class="text-xs text-gray-500 dark:text-candy-paleSlate leading-relaxed">
+              Validated HTML5 structures built for cross-browser, touchscreen accessibility. Your design systems are completely clean and modular.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Social Channels Grid with Vector SVG Icons -->
+        <div class="p-6 bg-gray-50 dark:bg-candy-black/40 border border-gray-200 dark:border-candy-jetBlack rounded-2xl">
+          <h3 class="text-xl font-bold mb-6 text-candy-jetBlack dark:text-white flex items-center gap-2 justify-center md:justify-start">
+            <i data-lucide="share-2" class="w-5 h-5 text-candy-watermelon"></i>
+            Connect Directly
+          </h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <!-- Email -->
+            <a href="mailto:thatmitch247@gmail.com" class="flex items-center gap-3 p-3 rounded-xl border border-gray-150 dark:border-candy-jetBlack hover:bg-candy-watermelon/10 hover:border-candy-watermelon/50 transition-all group min-w-0">
+              <div class="p-2.5 rounded-lg bg-candy-watermelon/10 text-candy-watermelon group-hover:scale-110 transition-transform shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs text-gray-400 block">Email Me</span>
+                <span class="text-sm font-semibold truncate block">thatmitch247@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+19712821665" class="flex items-center gap-3 p-3 rounded-xl border border-gray-150 dark:border-candy-lightGreen/20 hover:border-candy-lightGreen/50 transition-all group min-w-0">
+              <div class="p-2.5 rounded-lg bg-candy-lightGreen/10 text-candy-lightGreen dark:text-candy-lightGreen group-hover:scale-110 transition-transform shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs text-gray-400 block">Message Directly</span>
+                <span class="text-sm font-semibold truncate block">+1 (971) 282-1665</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://GitHub.com/thatmitch247" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-150 dark:border-candy-jetBlack hover:bg-candy-babyBlueIce/20 hover:border-candy-babyBlueIce/50 transition-all group min-w-0">
+              <div class="p-2.5 rounded-lg bg-candy-babyBlueIce/10 text-candy-babyBlueIce group-hover:scale-110 transition-transform shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.57-.22 1.16-.15 1.75v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs text-gray-400 block">GitHub Profile</span>
+                <span class="text-sm font-semibold truncate block">github.com/thatmitch247</span>
+              </div>
+            </a>
+
+            <!-- Blog -->
+            <a href="blog.html" class="flex items-center gap-3 p-3 rounded-xl border border-gray-150 dark:border-candy-neonViolet/20 hover:border-candy-neonViolet/50 transition-all group min-w-0">
+              <div class="p-2.5 rounded-lg bg-candy-neonViolet/10 text-candy-neonViolet group-hover:scale-110 transition-transform shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs text-gray-400 block">Tech Blog</span>
+                <span class="text-sm font-semibold truncate block">thatmitch247.github.io/blog</span>
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://Instagram.com/thatmitch247" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-150 dark:border-candy-jetBlack hover:bg-pink-500/10 hover:border-pink-500/50 transition-all group min-w-0">
+              <div class="p-2.5 rounded-lg bg-pink-500/10 text-pink-500 group-hover:scale-110 transition-transform shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs text-gray-400 block">Instagram</span>
+                <span class="text-sm font-semibold truncate block">instagram.com/thatmitch247</span>
+              </div>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com/thatmitch" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 rounded-xl border border-gray-150 dark:border-candy-jetBlack hover:bg-blue-600/10 hover:border-blue-600/50 transition-all group min-w-0">
+              <div class="p-2.5 rounded-lg bg-blue-600/10 text-blue-600 group-hover:scale-110 transition-transform shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs text-gray-400 block">Facebook</span>
+                <span class="text-sm font-semibold truncate block">facebook.com/thatmitch</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SECTION 3: RECENT PROJECTS (Mobile-First 3x2 Grid) -->
+    <!-- SECTION 3: RECENT PROJECTS (Mobile-First 3x2 Grid inside Minimalist Light Browser Frame) -->
     <section id="projects" class="py-20 border-b border-gray-100 dark:border-candy-onyx">
       <div class="max-w-5xl mx-auto px-6">
         
@@ -308,16 +501,37 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <!-- Card 1: Plumma -->
-          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
-            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
-              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_plumber_netlify_app_desktop_mockup.png" alt="Plumma Project Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 bg-candy-watermelon text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Commercial</span>
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <!-- Minimal Browser Wrapper (Always Light Theme) -->
+            <div class="w-full bg-gray-50 dark:bg-candy-onyx/40 p-3 pb-0 relative border-b border-gray-200 dark:border-candy-jetBlack flex flex-col justify-end">
+              <div class="bg-white border border-gray-200 rounded-t-xl flex flex-col overflow-hidden shadow-sm">
+                <!-- Browser Header -->
+                <div class="flex items-center justify-between px-3 py-1.5 bg-gray-50 border-b border-gray-150 shrink-0">
+                  <div class="flex gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-royalGold"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen"></span>
+                  </div>
+                  <div class="bg-white border border-gray-150 rounded text-[8px] text-gray-400 font-mono px-3 py-0.5 truncate w-2/3 text-center select-none">
+                    m-dunbar-plumber.netlify.app
+                  </div>
+                  <i data-lucide="external-link" class="w-3 h-3 text-candy-babyBlueIce shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <!-- Content / Image -->
+                <div class="overflow-hidden relative bg-white">
+                  <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_plumber_netlify_app_desktop_mockup.png" alt="Plumma Project Desktop Mockup" class="w-full h-auto block">
+                </div>
+              </div>
+              <!-- Overlapping Category Tag -->
+              <span class="absolute bottom-0 translate-y-1/2 left-6 bg-candy-watermelon text-white text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md z-10">
+                Commercial
+              </span>
             </div>
-            <div class="p-5 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
+            
+            <div class="p-5 flex-grow flex flex-col justify-between pt-6">
+              <div class="space-y-2 mb-4">
                 <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">Plumma Framework</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">
                   A high-conversion emergency plumbing platform designed for structural performance and instantaneous lead generation.
                 </p>
               </div>
@@ -329,16 +543,37 @@
           </div>
 
           <!-- Card 2: DeLuxarre Interiors -->
-          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
-            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
-              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_interior_design_netlify_app_desktop_mockup.png" alt="DeLuxarre Interiors Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 bg-candy-neonViolet text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Bespoke UI</span>
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <!-- Minimal Browser Wrapper (Always Light Theme) -->
+            <div class="w-full bg-gray-50 dark:bg-candy-onyx/40 p-3 pb-0 relative border-b border-gray-200 dark:border-candy-jetBlack flex flex-col justify-end">
+              <div class="bg-white border border-gray-200 rounded-t-xl flex flex-col overflow-hidden shadow-sm">
+                <!-- Browser Header -->
+                <div class="flex items-center justify-between px-3 py-1.5 bg-gray-50 border-b border-gray-150 shrink-0">
+                  <div class="flex gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-royalGold"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen"></span>
+                  </div>
+                  <div class="bg-white border border-gray-150 rounded text-[8px] text-gray-400 font-mono px-3 py-0.5 truncate w-2/3 text-center select-none">
+                    m-dunbar-interior-design.netlify.app
+                  </div>
+                  <i data-lucide="external-link" class="w-3 h-3 text-candy-babyBlueIce shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <!-- Content / Image -->
+                <div class="overflow-hidden relative bg-white">
+                  <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_interior_design_netlify_app_desktop_mockup.png" alt="DeLuxarre Interiors Desktop Mockup" class="w-full h-auto block">
+                </div>
+              </div>
+              <!-- Overlapping Category Tag -->
+              <span class="absolute bottom-0 translate-y-1/2 left-6 bg-candy-neonViolet text-white text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md z-10">
+                Bespoke UI
+              </span>
             </div>
-            <div class="p-5 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
+            
+            <div class="p-5 flex-grow flex flex-col justify-between pt-6">
+              <div class="space-y-2 mb-4">
                 <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">DeLuxarre Interiors</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">
                   An elegant premium design experience engineered with micro-interactions, modal consultation planners, and parallax scroll layouts.
                 </p>
               </div>
@@ -350,16 +585,37 @@
           </div>
 
           <!-- Card 3: AuraMed -->
-          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
-            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
-              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_med_spa_netlify_app_desktop_mockup%202.png" alt="AuraMed Spa Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 bg-candy-babyBlueIce text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Aesthetics</span>
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <!-- Minimal Browser Wrapper (Always Light Theme) -->
+            <div class="w-full bg-gray-50 dark:bg-candy-onyx/40 p-3 pb-0 relative border-b border-gray-200 dark:border-candy-jetBlack flex flex-col justify-end">
+              <div class="bg-white border border-gray-200 rounded-t-xl flex flex-col overflow-hidden shadow-sm">
+                <!-- Browser Header -->
+                <div class="flex items-center justify-between px-3 py-1.5 bg-gray-50 border-b border-gray-150 shrink-0">
+                  <div class="flex gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-royalGold"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen"></span>
+                  </div>
+                  <div class="bg-white border border-gray-150 rounded text-[8px] text-gray-400 font-mono px-3 py-0.5 truncate w-2/3 text-center select-none">
+                    m-dunbar-med-spa.netlify.app
+                  </div>
+                  <i data-lucide="external-link" class="w-3 h-3 text-candy-babyBlueIce shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <!-- Content / Image -->
+                <div class="overflow-hidden relative bg-white">
+                  <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_med_spa_netlify_app_desktop_mockup%202.png" alt="AuraMed Spa Desktop Mockup" class="w-full h-auto block">
+                </div>
+              </div>
+              <!-- Overlapping Category Tag -->
+              <span class="absolute bottom-0 translate-y-1/2 left-6 bg-candy-babyBlueIce text-candy-jetBlack text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md z-10">
+                Aesthetics
+              </span>
             </div>
-            <div class="p-5 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
+            
+            <div class="p-5 flex-grow flex flex-col justify-between pt-6">
+              <div class="space-y-2 mb-4">
                 <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">AuraMed Med Spa</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">
                   A pristine aesthetics interface utilizing dynamic non-reloading treatment tabs, credential highlights, and blurred sticky panels.
                 </p>
               </div>
@@ -371,17 +627,38 @@
           </div>
 
           <!-- Card 4: TerraForm -->
-          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
-            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
-              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_landscaper_netlify_app_desktop_mockup.png" alt="TerraForm Landscape Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 bg-candy-lightGreen text-candy-black text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Eco Dev</span>
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <!-- Minimal Browser Wrapper (Always Light Theme) -->
+            <div class="w-full bg-gray-50 dark:bg-candy-onyx/40 p-3 pb-0 relative border-b border-gray-200 dark:border-candy-jetBlack flex flex-col justify-end">
+              <div class="bg-white border border-gray-200 rounded-t-xl flex flex-col overflow-hidden shadow-sm">
+                <!-- Browser Header -->
+                <div class="flex items-center justify-between px-3 py-1.5 bg-gray-50 border-b border-gray-150 shrink-0">
+                  <div class="flex gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-royalGold"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen"></span>
+                  </div>
+                  <div class="bg-white border border-gray-150 rounded text-[8px] text-gray-400 font-mono px-3 py-0.5 truncate w-2/3 text-center select-none">
+                    m-dunbar-landscaper.netlify.app
+                  </div>
+                  <i data-lucide="external-link" class="w-3 h-3 text-candy-babyBlueIce shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <!-- Content / Image -->
+                <div class="overflow-hidden relative bg-white">
+                  <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_landscaper_netlify_app_desktop_mockup.png" alt="TerraForm Landscape Mockup" class="w-full h-auto block">
+                </div>
+              </div>
+              <!-- Overlapping Category Tag -->
+              <span class="absolute bottom-0 translate-y-1/2 left-6 bg-candy-lightGreen text-candy-black text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md z-10">
+                Eco Dev
+              </span>
             </div>
-            <div class="p-5 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
+            
+            <div class="p-5 flex-grow flex flex-col justify-between pt-6">
+              <div class="space-y-2 mb-4">
                 <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">TerraForm Architecture</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
-                  Eco-conscious landing architecture displaying project estimators, seasonal badges, and custom high-contrast masonry galleries.
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">
+                  Eco-conscious landscape architecture displaying project estimators, seasonal badges, and custom high-contrast masonry galleries.
                 </p>
               </div>
               <a href="https://m-dunbar-landscaper.netlify.app/" target="_blank" rel="noopener" class="w-full py-2 px-4 border border-candy-lightGreen text-candy-lightGreen dark:text-candy-lightGreen dark:hover:bg-candy-lightGreen dark:hover:text-candy-black text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
@@ -392,16 +669,37 @@
           </div>
 
           <!-- Card 5: GloveBox -->
-          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
-            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
-              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_mobile_app_netlify_app_desktop_mockup.png" alt="GloveBox App Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 bg-candy-royalGold text-candy-black text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Mobile</span>
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <!-- Minimal Browser Wrapper (Always Light Theme) -->
+            <div class="w-full bg-gray-50 dark:bg-candy-onyx/40 p-3 pb-0 relative border-b border-gray-200 dark:border-candy-jetBlack flex flex-col justify-end">
+              <div class="bg-white border border-gray-200 rounded-t-xl flex flex-col overflow-hidden shadow-sm">
+                <!-- Browser Header -->
+                <div class="flex items-center justify-between px-3 py-1.5 bg-gray-50 border-b border-gray-150 shrink-0">
+                  <div class="flex gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-royalGold"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen"></span>
+                  </div>
+                  <div class="bg-white border border-gray-150 rounded text-[8px] text-gray-400 font-mono px-3 py-0.5 truncate w-2/3 text-center select-none">
+                    m-dunbar-mobile-app.netlify.app
+                  </div>
+                  <i data-lucide="external-link" class="w-3 h-3 text-candy-babyBlueIce shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <!-- Content / Image -->
+                <div class="overflow-hidden relative bg-white">
+                  <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_mobile_app_netlify_app_desktop_mockup.png" alt="GloveBox App Desktop Mockup" class="w-full h-auto block">
+                </div>
+              </div>
+              <!-- Overlapping Category Tag -->
+              <span class="absolute bottom-0 translate-y-1/2 left-6 bg-candy-royalGold text-candy-jetBlack text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md z-10">
+                Mobile
+              </span>
             </div>
-            <div class="p-5 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
+            
+            <div class="p-5 flex-grow flex flex-col justify-between pt-6">
+              <div class="space-y-2 mb-4">
                 <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">GloveBox Ledger</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">
                   Vehicle catalog timeline log highlighting device-frame mockup matrices, release timeline steps, and complete dark optimization.
                 </p>
               </div>
@@ -413,16 +711,37 @@
           </div>
 
           <!-- Card 6: Unpacked -->
-          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-[400px]">
-            <div class="h-[45%] w-full overflow-hidden bg-candy-jetBlack relative">
-              <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_podcast_netlify_app_desktop_mockup.png" alt="Unpacked Podcast Desktop Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 bg-candy-neonViolet text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Podcast</span>
+          <div class="group bg-white dark:bg-candy-onyx border border-gray-200 dark:border-candy-jetBlack rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <!-- Minimal Browser Wrapper (Always Light Theme) -->
+            <div class="w-full bg-gray-50 dark:bg-candy-onyx/40 p-3 pb-0 relative border-b border-gray-200 dark:border-candy-jetBlack flex flex-col justify-end">
+              <div class="bg-white border border-gray-200 rounded-t-xl flex flex-col overflow-hidden shadow-sm">
+                <!-- Browser Header -->
+                <div class="flex items-center justify-between px-3 py-1.5 bg-gray-50 border-b border-gray-150 shrink-0">
+                  <div class="flex gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-watermelon"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-royalGold"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-candy-lightGreen"></span>
+                  </div>
+                  <div class="bg-white border border-gray-150 rounded text-[8px] text-gray-400 font-mono px-3 py-0.5 truncate w-2/3 text-center select-none">
+                    m-dunbar-podcast.netlify.app
+                  </div>
+                  <i data-lucide="external-link" class="w-3 h-3 text-candy-babyBlueIce shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <!-- Content / Image -->
+                <div class="overflow-hidden relative bg-white">
+                  <img src="https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/6168dd22c61a7b7141a4d3a87751bfc8416c4b21/images/m_dunbar_podcast_netlify_app_desktop_mockup.png" alt="Unpacked Podcast Desktop Mockup" class="w-full h-auto block">
+                </div>
+              </div>
+              <!-- Overlapping Category Tag -->
+              <span class="absolute bottom-0 translate-y-1/2 left-6 bg-candy-neonViolet text-white text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded shadow-md z-10">
+                Podcast
+              </span>
             </div>
-            <div class="p-5 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
+            
+            <div class="p-5 flex-grow flex flex-col justify-between pt-6">
+              <div class="space-y-2 mb-4">
                 <h3 class="text-lg font-bold text-candy-jetBlack dark:text-white tracking-tight">Unpacked Frame</h3>
-                <p class="text-xs text-gray-500 dark:text-candy-paleSlate line-clamp-3">
+                <p class="text-xs text-gray-500 dark:text-candy-paleSlate">
                   Media-centric ecosystem containing custom HTML5 audio integrations, dynamic host profiles, and collapsible text tray architectures.
                 </p>
               </div>
@@ -539,12 +858,12 @@
           “Coming soon to an Internet near you!”
         </p>
 
-        <!-- Newsletter fast-signup indicator -->
-        <div class="max-w-md mx-auto pt-4 flex gap-2">
-          <div class="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 text-sm text-candy-paleSlate">
-            <i data-lucide="bell" class="w-4 h-4 text-candy-royalGold animate-bounce"></i>
-            <span>Be notified as soon as Episode 1 drops</span>
-          </div>
+        <!-- Newsletter Interactive Route Anchor Button -->
+        <div class="max-w-md mx-auto pt-4">
+          <a href="newsletter-sign-up.html" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-candy-watermelon hover:bg-candy-watermelon/90 text-white font-bold uppercase tracking-wider text-xs rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <i data-lucide="bell" class="w-4 h-4 animate-bounce"></i>
+            <span>Notify Me</span>
+          </a>
         </div>
       </div>
     </section>
@@ -573,6 +892,12 @@
 
     </div>
   </footer>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-candy-jetBlack text-white dark:bg-white dark:text-candy-black px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-candy-onyx/20 text-sm font-semibold">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-candy-lightGreen shrink-0"></i>
+    <span id="toastMessage">Link copied to clipboard!</span>
+  </div>
 
   <!-- INTERACTIVE LOGIC SCRIPT -->
   <script>
@@ -611,6 +936,47 @@
       }
       lucide.createIcons();
     });
+
+    // Native Web Share API action with clipboard copy fallback
+    async function sharePage() {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Mitch Dunbar — Web Developer Portfolio',
+            text: 'Check out Mitch Dunbar\'s high-performance, minimalist software engineering portfolio.',
+            url: window.location.href
+          });
+        } catch (err) {
+          console.log('Share canceled or failed:', err);
+        }
+      } else {
+        // Fallback: Copy link to clipboard
+        const tempInput = document.createElement('input');
+        tempInput.value = window.location.href;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showToast('Portfolio link copied to clipboard!');
+        } catch (err) {
+          console.error('Copy fallback failed:', err);
+        }
+        document.body.removeChild(tempInput);
+      }
+    }
+
+    // Custom Toast Notification trigger
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
 
     // Form submission processing with AJAX fetch to PHP
     async function handleFormSubmit(event) {
@@ -672,4 +1038,4 @@
     }
   </script>
 </body>
-</html
+</html>
