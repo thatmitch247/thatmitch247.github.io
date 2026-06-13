@@ -1,45 +1,33 @@
+# About Me
+
+## Professional Profile
+A veteran digital creator and software engineer with over **25 years of hands-on experience** bridging the gap between high-end graphic design and robust code. From building client sites at age 16 to scaling projects at Fortune 500 enterprises, I specialize in delivering high-performance digital solutions that combine sleek minimalist aesthetics with clean architecture.
+
+* **Current Location:** Portland, Oregon (Available for remote contracts nationwide)
+* **Roles:** Web Developer, App Developer, Tech Consultant
+
 ---
-title: About
-layout: page
+
+## Key Corporate & Leadership Experience
+* **Fortune 500 Impact:** Spent multiple years embedded in elite engineering and tech teams at industry leaders, most notably **Apple** and **Comcast’s Xfinity**.
+* **Team Leadership:** Proven track record directing cross-functional development teams ranging from **4 to 20 engineers** for mid-sized initiatives.
+* **Proven Volume:** Over my career, I have architecturalized, designed, and successfully shipped **over 100 websites** for a diverse array of businesses and clients.
+
 ---
-![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+## Development Strong Suits
+* **Frontend Architecture & Design:** Specializing in cutting-edge web interfaces, modern layout engines, fluid responsive architectures, and precise visual aesthetics.
+* **Branding & Digital Marketing:** Marrying clean code with technical SEO, optimizing performance budgets, and crafting cohesive brand guidelines across the web.
+* **Mobile Ecosystems:** Experienced in mobile app engineering, having built, optimized, and published multiple production apps and mobile games across the **iOS App Store** and **Google Play**.
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+---
 
-<h2>Skills</h2>
+## Personal History
+* **Early Foundations:** Originally from **Baltimore, Maryland**, my career technically started before I could legally drive. I was working as a professional graphic designer in my early teens.
+* **Self-Taught Roots:** Fell in love with web programming during my Sophomore year of high school and landed my first paying development clients by age 16.
+* **Evolution:** In my early 20s, I expanded my technical toolkit from static web design into interactive application engineering, leading to a lifelong focus on building high-utility digital workflows.
 
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Tests)</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
+---
 
-<h2>Projects</h2>
-
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+## Let's Connect
+Whether you need an execution-focused developer to build an app or an experienced architect to steer your project's roadmap, I am available for both developer and engineering consultant contracts.
