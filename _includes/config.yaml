@@ -1,0 +1,68 @@
+# ==========================================================================
+# DunbarDigital — Jekyll Main Configuration File
+# Compatible with Indigo minimal template, GitHub Pages, and Local Dev
+# ==========================================================================
+
+# 1. SITE METADATA
+title: "DunbarDigital"
+description: >-
+  Minimalist, high-performance developer workspace, bespoke visual templates, 
+  and software engineering portfolios based in Portland, OR.
+url: "https://thatmitch247.github.io"
+baseurl: "/dunbars-modern-tech-portfolio" # Leave as "" if deploying to custom root domain
+
+# 2. FOUNDER / AUTHOR DETAILS
+author:
+  name: "Mitch Dunbar"
+  email: "thatmitch247@gmail.com"
+  form_target_email: "dunbar.mitch@icloud.com"
+  bio: "We craft elegant, blazing-fast, and minimalist applications for those who love clean systems and robust experiences."
+  location: "Portland, OR"
+  avatar: "https://raw.githubusercontent.com/thatmitch247/dunbars-modern-tech-portfolio/refs/heads/main/images/IMG_4899.jpeg"
+
+# 3. SOCIAL CHANNEL INTEGRATIONS
+social:
+  github: "thatmitch247"
+  instagram: "thatmitch247"
+  facebook: "thatmitch"
+  email: "thatmitch247@gmail.com"
+  phone: "+19712821665"
+  blog_url: "https://thatmitch247.github.io/blog"
+
+# 4. CUSTOM DESIGN SYSTEM TOKENS (Candy Palette References)
+candy_palette:
+  watermelon: "#ED264D"
+  light_green: "#72F7A0"
+  baby_blue_ice: "#7CB8FF"
+  royal_gold: "#F9DD5C"
+  neon_violet: "#C64DEC"
+  jet_black: "#282C34"
+  onyx: "#131418"
+  black: "#05060A"
+  alabaster_grey: "#DEDFE3"
+  pale_slate: "#C4C8D2"
+
+# 5. BUILD SETTINGS & COMPILERS
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+# 6. DIRECTORY EXCLUSIONS
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - FAQ.md
+
+# 7. GITHUB PAGES PLUGINS
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
