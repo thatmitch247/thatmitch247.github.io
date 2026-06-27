@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunbar Digital | $299 Single-Page Websites</title>
+    <!-- Ubuntu Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Ubuntu+Condensed&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS resets and core MattFarley.ca inspired variables */
+        :root {
+            --primary: #7510F7;
+            --primary-hover: #5F0CD3;
+            --dark: #141C3A;
+            --light: #F8F9FA;
+            --border: #E6ECF8;
+            --text-muted: #5A6F95;
+            --font-sans: 'Ubuntu', sans-serif;
+            --font-condensed: 'Ubuntu Condensed', sans-serif;
+            --font-mono: 'Ubuntu Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: var(--font-sans);
+            color: var(--dark);
+            background-color: #ffffff;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Utility Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* Buttons matching the clean outline/pill layout */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-solid {
+            background: var(--primary);
+            color: #ffffff;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-solid:hover {
+            background: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        /* Header / Navbar */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* 1. Hero Section */
+        .hero {
+            padding: 60px 0 100px 0;
+            background: #ffffff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-illustration img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 2. The Process (Overview Graphic Section) */
+        .process-overview {
+            background: var(--light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .graphic-placeholder {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        /* 3. CTA Section */
+        .cta-section {
+            background: #ffffff;
+        }
+
+        .cta-box {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: left;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .bullet-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* 4. The Process (Accordion) */
+        .accordion-section {
+            background: var(--light);
+        }
+
+        .accordion-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .accordion-item {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+
+        .accordion-header:hover {
+            background: #fdfdfd;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: var(--text-muted);
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 0 20px 20px 20px;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 5. FAQs */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+        }
+
+        /* 6. About Section */
+        .about-section {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .about-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* 7. Portfolio & 8. Recent Local Work */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .portfolio-img {
+            background: #f0f4f8;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        /* 9. Contact / Footer */
+        footer {
+            background: var(--dark);
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .btn-row {
+                justify-content: center;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <!-- Using the attached branding vector image placeholder -->
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='60' x='10' font-family='sans-serif' font-size='40' font-weight='bold' fill='%237510F7'>DD</text></svg>" alt="Dunbar Digital Logo">
+                <span>Dunbar Digital</span>
+            </a>
+            <a href="#contact" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Say Hello</a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="section hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>$299 Landing Pages</h1>
+                <p>Our one page websites strike a perfect balance between simplicity and sophistication. We leverage modern, minimalist one page web design and cutting-edge development strategies to create one page sites that shine.</p>
+                <div class="btn-row">
+                    <a href="#process" class="btn btn-solid">Our Process</a>
+                    <a href="#faq" class="btn btn-primary">FAQs</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <!-- Using required file rendering constraint -->
+                <img src="23D08F45-4D9A-486F-8081-42343BEA6E68.jpeg" alt="Dunbar Digital Flat Design Concept Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. The Process (Overview Graphic) -->
+    <section id="process" class="section process-overview">
+        <div class="container">
+            <h2 class="section-title">The Blueprint to Launch</h2>
+            <p class="section-subtitle">A seamless pipeline constructed to scale your regional presence quickly and smoothly.</p>
+            <div class="graphic-placeholder">
+                <p style="font-family: var(--font-mono); color: var(--primary);">[ Intake Form ] ➔ [ AI Mapping Template ] ➔ [ Free Netlify Production Staging ] ➔ [ Client Review Within 48 Hours ]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CTA: Get Started Now -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="section-title">Ready to Swing for the Fences?</h2>
+            <p class="section-subtitle">In today's hyper-competitive global community, you need to knock first impressions out of the park.</p>
+            <div class="cta-box">
+                <ul class="bullet-list">
+                    <li>Our clean, streamlined one page websites allow you to condense your unique brand identity and exciting products and services into an intuitive, easy-to-navigate experience that builds interest, wins trust, and drives sales.</li>
+                    <li>Our one page sites are sleek, stylish, and highly responsive on both mobile and desktop interfaces.</li>
+                    <li>Our intuitive navigation menus make it effortless for new visitors to explore your home, about, and product sections instantly, while our auto-scroll feature ensures they stay engaged from contact to conversion.</li>
+                </ul>
+                <div class="btn-row" style="margin-top: 20px;">
+                    <a href="https://docs.google.com" target="_blank" class="btn btn-solid">Fill Intake Form</a>
+                    <a href="#contact" class="btn btn-primary">Contact Us Instead</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. The Process (Accordion Menu) -->
+    <section class="section accordion-section">
+        <div class="container">
+            <h2 class="section-title">How It Works Step-by-Step</h2>
+            <p class="section-subtitle">Your timeline is completely within your control. Here is our 5-step development pipeline.</p>
+            
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header">Step 1: Complete Onboarding Intake Form <span class="accordion-icon">▼</span></div>
+                    <div class="accordion-content">
+                        <p>Fill out our extensive online request layout detailing your exact business requirements, contact records, and preferences.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Step 2: Processing via Dataset Compilation <span class="accordion-icon">▼</span></div>
+                    <div class="accordion-content">
+                        <p>Your values populate into our structured datasets instantly, mapping to specific parameters designed for swift code compilation.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Step 3: Rapid AI-Assisted Code Production <span class="accordion-icon">▼</span></div>
+                    <div class="accordion-content">
+                        <p>Using strict operational parameters, custom structures, and engineering frameworks, standard snippets are tailored specifically around your copy.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Step 4: Netlify Production Staging <span class="accordion-icon">▼</span></div>
+                    <div class="accordion-content">
+                        <p>We host the code initial layout on secure Netlify infrastructures within a 48-hour turn window.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Step 5: Final Evaluation & Delivery <span class="accordion-icon">▼</span></div>
+                    <div class="accordion-content">
+                        <p>Review the design framework, implement minor textual iterations, and easily launch to capture client transactions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQs -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Clear responses regarding billing adjustments, assets, and design structures.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How can it only cost $299?</h4>
+                    <p>By using optimized workflows and programmatic templates paired with structured intake variables, we reduce overhead hours significantly.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is the turnaround timeline?</h4>
+                    <p>We can deliver the site structure within 48 hours if comprehensive data is populated securely into the intake asset initially.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer structural updates or adjustments?</h4>
+                    <p>Yes. Our passionate designers and innovative developers hop at the opportunity to create one page websites that satisfy your scaling needs.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if I find a cheaper development deal?</h4>
+                    <p>Bring us valid documentation of any lower matching regional pricing framework and we will confidently match or beat it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. About 'Dunbar Digital' -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title" style="color: #ffffff;">About Dunbar Digital</h2>
+                <p>We are a full-service design and development studio focused on empowering regional small business owners across Portland, Oregon, and the Pacific Northwest. If your business requires full brand alignment, we are more than capable of designing logos, custom graphics, marketing material, and social assets at values better than you can find anywhere else.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Portfolio & 8. Recent Local Work -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Digital Craft & Recent Local Work</h2>
+            <p class="section-subtitle">Explore live showcase architectures we have constructed across local networks.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img">[ Local Coffee Shop Design Showcase ]</div>
+                    <div class="portfolio-info">
+                        <h5>Rose City Brew</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Single Page Minimalist</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">[ Creative Design Agency Concept ]</div>
+                    <div class="portfolio-info">
+                        <h5>Cascade Studio</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Modern Portfolio Page</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">[ Pacific Northwest Apparel Theme ]</div>
+                    <div class="portfolio-info">
+                        <h5>Evergreen Outfitters</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">High-Conversion Static Layout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Contact (Footer) -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-logo">Dunbar Digital</div>
+            <p class="footer-text">Designing and coding beautifully simple things to help small businesses win trust and drive sales.</p>
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">&copy; 2026 Dunbar Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Auto-collapsing Accordion Logic Script -->
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const currentItem = header.parentElement;
+                const content = header.nextElementSibling;
+                
+                // Close other items (Auto-Collapse behavior)
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    if (item !== currentItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        item.querySelector('.accordion-content').style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current item
+                currentItem.classList.toggle('active');
+                if (currentItem.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
